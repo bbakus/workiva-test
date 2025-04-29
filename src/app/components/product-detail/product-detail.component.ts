@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product.model';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -15,11 +16,13 @@ export class ProductDetailComponent implements OnInit {
   product: Product | undefined;
   loading = true;
   error = false;
+  addedToCart = false;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private productService: ProductService
+    private productService: ProductService,
+    private cartService: CartService
   ) {}
 
   ngOnInit(): void {
@@ -65,5 +68,17 @@ export class ProductDetailComponent implements OnInit {
   stopPropagation(event: MouseEvent): void {
     // Prevent click from bubbling up to the overlay
     event.stopPropagation();
+  }
+
+  addToCart(): void {
+    if (this.product) {
+      this.cartService.addToCart(this.product);
+      this.addedToCart = true;
+      
+      // Reset the added to cart message after 2 seconds
+      setTimeout(() => {
+        this.addedToCart = false;
+      }, 2000);
+    }
   }
 }

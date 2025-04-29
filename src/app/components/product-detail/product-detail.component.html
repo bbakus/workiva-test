@@ -18,7 +18,10 @@
         <div class="card-description">{{ product.description }}</div>
         
         <div class="card-actions">
-          <button class="add-to-cart-button">Add to Cart</button>
+          <button class="add-to-cart-button" (click)="addToCart()">
+            <span *ngIf="!addedToCart">Add to Cart</span>
+            <span *ngIf="addedToCart">Added!</span>
+          </button>
           <button class="back-button" (click)="navigateToProductList()">Back to Cards</button>
         </div>
       </div>

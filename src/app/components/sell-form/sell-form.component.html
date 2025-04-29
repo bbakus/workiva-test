@@ -1,0 +1,83 @@
+<div class="sell-container">
+  <h2>Sell Your MTG Card</h2>
+
+  <div class="info-panel">
+    <p>Submit your Magic: The Gathering card for an instant price quote. Follow these steps:</p>
+    <ol>
+      <li>Upload a clear image of your card</li>
+      <li>Enter the card name and details</li>
+      <li>Submit your card for evaluation</li>
+      <li>Get an instant price quote based on our assessment</li>
+    </ol>
+  </div>
+  
+  <form (ngSubmit)="onSubmit()" class="sell-form">
+    <div class="form-group card-upload">
+      <label for="card-image">Card Image</label>
+      <div class="image-upload-container">
+        <div class="image-preview" *ngIf="imagePreviewUrl">
+          <img [src]="imagePreviewUrl" alt="Card Preview">
+        </div>
+        <div class="upload-placeholder" *ngIf="!imagePreviewUrl">
+          <span class="upload-icon">+</span>
+          <p>Click or drag to upload an image</p>
+        </div>
+        <input 
+          type="file"
+          id="card-image"
+          accept="image/*"
+          (change)="onFileSelected($event)"
+          [disabled]="isSubmitting"
+        >
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="card-name">Card Name</label>
+      <input 
+        type="text"
+        id="card-name"
+        [(ngModel)]="cardName"
+        name="cardName"
+        placeholder="Enter card name"
+        [disabled]="isSubmitting"
+        required
+      >
+    </div>
+    
+    <div class="form-group">
+      <label for="card-desc">Card Description (optional)</label>
+      <textarea 
+        id="card-desc"
+        [(ngModel)]="cardDescription"
+        name="cardDescription"
+        placeholder="Enter any additional details about your card"
+        [disabled]="isSubmitting"
+        rows="3"
+      ></textarea>
+    </div>
+    
+    <div class="error-message" *ngIf="submissionError">
+      {{ submissionError }}
+    </div>
+    
+    <div class="form-actions">
+      <button 
+        type="button" 
+        class="reset-button" 
+        (click)="resetForm()" 
+        [disabled]="isSubmitting"
+      >
+        Reset
+      </button>
+      <button 
+        type="submit" 
+        class="submit-button" 
+        [disabled]="isSubmitting || !imagePreviewUrl || !cardName.trim()"
+      >
+        <span *ngIf="!isSubmitting">Submit Card</span>
+        <span *ngIf="isSubmitting">Evaluating...</span>
+      </button>
+    </div>
+  </form>
+</div> 

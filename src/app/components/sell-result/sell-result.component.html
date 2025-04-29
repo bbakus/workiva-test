@@ -1,0 +1,86 @@
+<div class="result-container">
+  <h2>Card Evaluation Result</h2>
+  
+  <div *ngIf="isLoading" class="loading-overlay">
+    <div class="loading-content">
+      Loading your card evaluation...
+    </div>
+  </div>
+  
+  <div *ngIf="error" class="error-overlay">
+    <div class="error-content">
+      Failed to load card evaluation. Redirecting back to the form.
+    </div>
+  </div>
+  
+  <div *ngIf="!isLoading && !error && submission" class="result-content">
+    <div class="result-header">
+      <div class="evaluation-stamp" [ngClass]="{'approved': submission.status === 'Approved', 'pending': submission.status === 'Pending', 'rejected': submission.status === 'Rejected'}">
+        {{ submission.status }}
+      </div>
+      <h3>{{ submission.name }}</h3>
+      <div class="submission-date">
+        Submitted: {{ submission.submittedAt | date:'medium' }}
+      </div>
+    </div>
+    
+    <div class="card-details">
+      <div class="card-image">
+        <img [src]="submission.imageUrl" [alt]="submission.name">
+      </div>
+      
+      <div class="card-info">
+        <div class="info-row">
+          <div class="info-label">Condition:</div>
+          <div class="info-value" [ngClass]="getConditionClass()">
+            {{ submission.condition }}
+          </div>
+        </div>
+        
+        <div class="info-row">
+          <div class="info-label">Rarity:</div>
+          <div class="info-value" [ngClass]="getRarityClass()">
+            {{ submission.rarity }}
+          </div>
+        </div>
+        
+        <div class="info-row description" *ngIf="submission.description">
+          <div class="info-label">Description:</div>
+          <div class="info-value">
+            {{ submission.description }}
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="price-container">
+      <div class="price-header">Our Offer</div>
+      <div class="price-value">${{ submission.estimatedPrice.toFixed(2) }}</div>
+      <div class="price-notes">
+        This offer is valid for 7 days. Bring your card to any of our store locations to complete the sale.
+      </div>
+      <div *ngIf="offerAccepted" class="offer-accepted-message">
+        <p>Offer accepted! Your card has been added to our collection.</p>
+        <p>You can now find it in our product listings.</p>
+        <button class="view-products-button" (click)="goToProductList()">View in Collection</button>
+      </div>
+    </div>
+    
+    <div class="action-buttons">
+      <a routerLink="/sell" class="submit-another">Submit Another Card</a>
+      <a href="#" class="print-offer">Print Offer</a>
+      <button *ngIf="submission.status === 'Pending'" class="accept-offer" (click)="acceptOffer()">
+        <span *ngIf="!isLoading">Accept Offer</span>
+        <span *ngIf="isLoading">Processing...</span>
+      </button>
+    </div>
+    
+    <div class="disclaimer">
+      <p>
+        Note: Final payment may vary based on in-person verification of the card's condition. 
+        Our system uses artificial intelligence to evaluate cards, but the final determination 
+        is made by our staff.
+      </p>
+    </div>
+  </div>
+</div> 

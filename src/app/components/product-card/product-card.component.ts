@@ -13,6 +13,8 @@ export class ProductCardComponent {
   @Input() product!: Product;
   @Output() productSelected = new EventEmitter<Product>();
 
+  constructor() {}
+
   onSelectProduct(): void {
     this.productSelected.emit(this.product);
   }

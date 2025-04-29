@@ -6,7 +6,6 @@ A modern Angular application that displays Magic: The Gathering cards with detai
 
 - Browse a collection of rare and valuable MTG cards
 - View detailed information about each card
-- Filter functionality for price ranges
 - External links to purchase cards on Amazon
 - Responsive design for all device sizes
 
@@ -32,8 +31,8 @@ A modern Angular application that displays Magic: The Gathering cards with detai
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/yourusername/mtg-collection.git
-cd mtg-collection
+git clone https://github.com/bbakus/workiva-test.git
+cd src
 ```
 
 2. Install dependencies:

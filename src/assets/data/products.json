@@ -1,58 +1,170 @@
 [
-  {
-    "id": 1,
-    "name": "Black Lotus",
-    "price": 30000.00,
-    "description": "Iconic Alpha rare artifact. Adds three mana of any color to your mana pool, then is sacrificed. One of the most valuable MTG cards in existence.",
-    "imageUrl": ""
-  },
-  {
-    "id": 2,
-    "name": "Jace, the Mind Sculptor",
-    "price": 129.99,
-    "description": "Powerful planeswalker with four versatile abilities including card manipulation, bouncing creatures, and milling. Considered one of the strongest planeswalkers ever printed.",
-    "imageUrl": ""
-  },
-  {
-    "id": 3,
-    "name": "Tarmogoyf",
-    "price": 39.99,
-    "description": "Legendary Modern staple creature whose power and toughness are equal to the number of card types in all graveyards. Often a very efficient threat for its mana cost.",
-    "imageUrl": ""
-  },
-  {
-    "id": 4,
-    "name": "Force of Will",
-    "price": 119.99,
-    "description": "Classic blue counterspell that can be cast for free by exiling a blue card from your hand and paying 1 life. Essential in Legacy and Vintage formats.",
-    "imageUrl": ""
-  },
-  {
-    "id": 5,
-    "name": "Liliana of the Veil",
-    "price": 69.99,
-    "description": "Powerful black planeswalker that forces all players to discard, can remove creatures, and can separate permanents into two piles for sacrifice. Format staple in Modern.",
-    "imageUrl": ""
-  },
-  {
-    "id": 6,
-    "name": "Mox Sapphire",
-    "price": 12999.99,
-    "description": "Part of the Power Nine, this zero-cost artifact taps to add blue mana to your mana pool. Reserved List card with extreme rarity and value.",
-    "imageUrl": ""
-  },
-  {
-    "id": 7,
-    "name": "Uro, Titan of Nature's Wrath",
-    "price": 29.99,
-    "description": "Powerful Simic (Green/Blue) Elder Giant that gains life, draws cards, and ramps lands. Can escape from your graveyard for continued value.",
-    "imageUrl": ""
-  },
-  {
-    "id": 8,
-    "name": "Mishra's Workshop",
-    "price": 3499.99,
-    "description": "Legendary land that taps for three colorless mana that can only be spent on artifact spells. Reserved List card and Vintage staple.",
-    "imageUrl": ""
-  }
-] 
+   {
+      "description" : "Iconic Alpha rare artifact. Adds three mana of any color to your mana pool, then is sacrificed. One of the most valuable MTG cards in existence.",
+      "id" : 1,
+      "imageUrl" : "../assets/images/black-lotus.jpg",
+      "name" : "Black Lotus",
+      "price" : 30000
+   },
+   {
+      "description" : "Powerful planeswalker with four versatile abilities including card manipulation, bouncing creatures, and milling. Considered one of the strongest planeswalkers ever printed.",
+      "id" : 2,
+      "imageUrl" : "../assets/images/jace.jpg",
+      "name" : "Jace, the Mind Sculptor",
+      "price" : 129.99
+   },
+   {
+      "description" : "Legendary Modern staple creature whose power and toughness are equal to the number of card types in all graveyards. Often a very efficient threat for its mana cost.",
+      "id" : 3,
+      "imageUrl" : "../assets/images/tarmogoyf.jpg",
+      "name" : "Tarmogoyf",
+      "price" : 39.99
+   },
+   {
+      "description" : "Classic blue counterspell that can be cast for free by exiling a blue card from your hand and paying 1 life. Essential in Legacy and Vintage formats.",
+      "id" : 4,
+      "imageUrl" : "../assets/images/force-of-will.jpg",
+      "name" : "Force of Will",
+      "price" : 119.99
+   },
+   {
+      "description" : "Powerful black planeswalker that forces all players to discard, can remove creatures, and can separate permanents into two piles for sacrifice. Format staple in Modern.",
+      "id" : 5,
+      "imageUrl" : "../assets/images/liliana.jpg",
+      "name" : "Liliana of the Veil",
+      "price" : 69.99
+   },
+   {
+      "description" : "Part of the Power Nine, this zero-cost artifact taps to add blue mana to your mana pool. Reserved List card with extreme rarity and value.",
+      "id" : 6,
+      "imageUrl" : "../assets/images/mox-sapphire.jpg",
+      "name" : "Mox Sapphire",
+      "price" : 12999.99
+   },
+   {
+      "description" : "Powerful Simic (Green/Blue) Elder Giant that gains life, draws cards, and ramps lands. Can escape from your graveyard for continued value.",
+      "id" : 7,
+      "imageUrl" : "../assets/images/uro.jpg",
+      "name" : "Uro, Titan of Nature's Wrath",
+      "price" : 29.99
+   },
+   {
+      "description" : "Legendary land that taps for three colorless mana that can only be spent on artifact spells. Reserved List card and Vintage staple.",
+      "id" : 8,
+      "imageUrl" : "../assets/images/mishra.jpg",
+      "name" : "Mishra's Workshop",
+      "price" : 3499.99
+   },
+   {
+      "description" : "One of the Power Nine cards. One blue mana to draw three cards, making it the most efficient card draw spell ever printed.",
+      "id" : 9,
+      "imageUrl" : "../assets/images/ancestral-recall.jpg",
+      "name" : "Ancestral Recall",
+      "price" : 8999.99
+   },
+   {
+      "description" : "Power Nine card that allows you to take an extra turn for just two mana. One of the most broken cards in Magic's history.",
+      "id" : 10,
+      "imageUrl" : "../assets/images/time-walk.jpg",
+      "name" : "Time Walk",
+      "price" : 7500
+   },
+   {
+      "description" : "Part of the Power Nine, this zero-cost artifact taps to add red mana to your mana pool. Enables explosive first turns.",
+      "id" : 11,
+      "imageUrl" : "../assets/images/mox-ruby.jpg",
+      "name" : "Mox Ruby",
+      "price" : 10999.99
+   },
+   {
+      "description" : "Original dual land that can tap for either blue or black mana without coming into play tapped. Reserved List staple for Legacy and Vintage.",
+      "id" : 12,
+      "imageUrl" : "../assets/images/underground-sea.jpg",
+      "name" : "Underground Sea",
+      "price" : 1299.99
+   },
+   {
+      "description" : "Original dual land that taps for blue or red mana. No drawback, unlike modern dual lands. On the Reserved List.",
+      "id" : 13,
+      "imageUrl" : "../assets/images/volcanic-island.jpg",
+      "name" : "Volcanic Island",
+      "price" : 999.99
+   },
+   {
+      "description" : "Original dual land that produces black or green mana without entering tapped. Reserved List card essential for many Commander decks.",
+      "id" : 14,
+      "imageUrl" : "../assets/images/bayou.jpg",
+      "name" : "Bayou",
+      "price" : 749.99
+   },
+   {
+      "description" : "Powerful Gruul planeswalker that can recur lands from your graveyard and ping creatures. Modern and Legacy staple.",
+      "id" : 15,
+      "imageUrl" : "../assets/images/wrenn-and-six.jpg",
+      "name" : "Wrenn and Six",
+      "price" : 89.99
+   },
+   {
+      "description" : "Efficient red monkey pirate that generates treasures and can steal cards from opponents' libraries. Format-defining card in Modern.",
+      "id" : 16,
+      "imageUrl" : "../assets/images/ragavan.jpg",
+      "name" : "Ragavan, Nimble Pilferer",
+      "price" : 79.99
+   },
+   {
+      "description" : "Zero-cost artifact that taps for two colorless mana with only a small risk of damage to you. Powerful in Commander and Vintage.",
+      "id" : 17,
+      "imageUrl" : "../assets/images/mana-crypt.jpg",
+      "name" : "Mana Crypt",
+      "price" : 199.99
+   },
+   {
+      "description" : "Legendary land that gives all creatures an upkeep cost, punishing token and creature-heavy strategies. Reserved List.",
+      "id" : 18,
+      "imageUrl" : "../assets/images/tabernacle.jpg",
+      "name" : "The Tabernacle at Pendrell Vale",
+      "price" : 2999.99
+   },
+   {
+      "description" : "Legendary land that taps to add green mana equal to the number of creatures you control. Reserved List card extremely powerful in creature decks.",
+      "id" : 19,
+      "imageUrl" : "../assets/images/gaeas-cradle.jpg",
+      "name" : "Gaea's Cradle",
+      "price" : 1099.99
+   },
+   {
+      "description" : "Land that makes colored mana for creature spells of a chosen type, and makes those spells uncounterable. Tribal deck staple.",
+      "id" : 20,
+      "imageUrl" : "../assets/images/cavern-of-souls.jpg",
+      "name" : "Cavern of Souls",
+      "price" : 89.99
+   },
+   {
+      "description" : "Legendary 15/15 Eldrazi with flying, protection from colored spells, annihilator 6, and an extra turn when cast. Nearly unbeatable once resolved.",
+      "id" : 21,
+      "imageUrl" : "../assets/images/emrakul.jpg",
+      "name" : "Emrakul, the Aeons Torn",
+      "price" : 69.99
+   },
+   {
+      "description" : "Banned in all formats, this card creates a subgame within the main game. Infamous for making tournaments run too long.",
+      "id" : 22,
+      "imageUrl" : "../assets/images/shahrazad.jpg",
+      "name" : "Shahrazad",
+      "price" : 499.99
+   },
+   {
+      "description" : "Banned in multiple formats, this 3-mana planeswalker can turn opponents' powerful creatures into mere Elks. One of the most broken planeswalkers ever.",
+      "id" : 23,
+      "imageUrl" : "../assets/images/oko.jpg",
+      "name" : "Oko, Thief of Crowns",
+      "price" : 29.99
+   },
+   {
+      "description" : "Red goblin that creates Treasure tokens equal to the number of artifacts and enchantments your opponents control. Commander staple.",
+      "id" : 24,
+      "imageUrl" : "../assets/images/dockside.jpg",
+      "name" : "Dockside Extortionist",
+      "price" : 59.99
+   }
+]

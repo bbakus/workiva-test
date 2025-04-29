@@ -1,5 +1,5 @@
 .cards-list-container {
-  padding: 40px 30px;
+  padding: 60px 30px;
   max-width: 1200px;
   margin: 0 auto;
   background-color: #1e1e1e;
@@ -41,8 +41,13 @@ h2 {
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px 30px;
-  margin-top: 10px;
+  gap: 100px 40px;
+  padding: 40px 0;
+}
+
+.cards-grid > * {
+  margin-bottom: 20px;
+  display: flex;
 }
 
 .debug {
@@ -58,15 +63,17 @@ h2 {
 @media (max-width: 1100px) {
   .cards-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 90px 40px;
   }
 }
 
 @media (max-width: 768px) {
   .cards-grid {
     grid-template-columns: 1fr;
+    gap: 80px;
   }
   
   .cards-list-container {
-    padding: 30px 20px;
+    padding: 40px 20px;
   }
 }

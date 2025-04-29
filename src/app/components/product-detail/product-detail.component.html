@@ -1,0 +1,42 @@
+<div class="modal-overlay" *ngIf="product" (click)="closeModal($event)">
+  <div class="modal-content" (click)="stopPropagation($event)">
+    <div class="close-button">
+      <button (click)="navigateToProductList()" aria-label="Close modal">×</button>
+    </div>
+    
+    <div class="card-content">
+      <div class="card-image" *ngIf="product.imageUrl">
+        <img [src]="product.imageUrl" [alt]="product.name" class="mtg-card">
+      </div>
+      <div class="card-image-placeholder" *ngIf="!product.imageUrl">
+        <div class="placeholder-text">MTG Card Image</div>
+      </div>
+      
+      <div class="card-info">
+        <h1 class="card-name">{{ product.name }}</h1>
+        <div class="card-price">${{ product.price.toFixed(2) }}</div>
+        <div class="card-description">{{ product.description }}</div>
+        
+        <div class="card-actions">
+          <button class="add-to-cart-button">Add to Cart</button>
+          <button class="back-button" (click)="navigateToProductList()">Back to Cards</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="loading" class="loading-overlay">
+  <div class="loading-content">
+    Loading card details...
+  </div>
+</div>
+
+<div *ngIf="error" class="error-overlay">
+  <div class="error-content">
+    Failed to load card details. Please try again later.
+    <div class="back-link">
+      <a (click)="navigateToProductList()">Back to Cards</a>
+    </div>
+  </div>
+</div>

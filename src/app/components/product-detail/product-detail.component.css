@@ -1,0 +1,419 @@
+.product-detail-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.loading, .error, .not-found {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 1.2rem;
+}
+
+.error {
+  color: #e63946;
+}
+
+.back-link {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.back-link a {
+  color: #457b9d;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.back-link a:hover {
+  color: #1d3557;
+}
+
+.product-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.product-image {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.product-image img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.product-name {
+  color: #1d3557;
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 2rem;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e63946;
+  margin-bottom: 20px;
+}
+
+.product-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.add-to-cart-button {
+  background-color: #1d3557;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.add-to-cart-button:hover {
+  background-color: #457b9d;
+}
+
+@media (max-width: 768px) {
+  .product-content {
+    flex-direction: column;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  backdrop-filter: blur(8px);
+}
+
+.modal-content {
+  background-color: #232323;
+  border-radius: 16px;
+  max-width: 1000px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(157, 78, 221, 0.3);
+  animation: fadeIn 0.4s ease-out, float 6s ease-in-out infinite;
+  border: 1px solid #444;
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+}
+
+.close-button button {
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(98, 71, 170, 0.3);
+  box-shadow: 0 0 15px rgba(157, 78, 221, 0.3);
+  transition: all 0.3s;
+}
+
+.close-button button:hover {
+  background-color: rgba(157, 78, 221, 0.5);
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: 0 0 20px rgba(157, 78, 221, 0.5);
+}
+
+.card-content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px;
+  gap: 40px;
+}
+
+.card-image, .card-image-placeholder {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mtg-card {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 16px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s ease;
+  animation: cardGlow 3s ease-in-out infinite;
+}
+
+.mtg-card:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+
+.card-image-placeholder {
+  height: 450px;
+  width: 320px;
+  border-radius: 16px;
+  background-color: #2c2c2c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(135deg, #2c2c2c 25%, #333 25%, #333 50%, #2c2c2c 50%, #2c2c2c 75%, #333 75%, #333 100%);
+  background-size: 20px 20px;
+}
+
+.card-image-placeholder::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: linear-gradient(
+    to bottom right,
+    transparent, 
+    transparent,
+    rgba(157, 78, 221, 0.1),
+    transparent,
+    transparent
+  );
+  transform: rotate(30deg);
+  animation: shimmer 5s linear infinite;
+}
+
+.placeholder-text {
+  color: #9d4edd;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(157, 78, 221, 0.8);
+  position: relative;
+  z-index: 2;
+}
+
+.card-info {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  color: #e0e0e0;
+}
+
+.card-name {
+  color: #c77dff;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-shadow: 0 0 15px rgba(157, 78, 221, 0.5);
+}
+
+.card-price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ff9e64;
+  margin-bottom: 25px;
+  text-shadow: 0 0 10px rgba(255, 158, 100, 0.3);
+}
+
+.card-description {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #bbbbbb;
+  margin-bottom: 30px;
+  flex-grow: 1;
+}
+
+.card-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.add-to-cart-button, .back-button {
+  padding: 14px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.add-to-cart-button {
+  background-color: #6247aa;
+  color: white;
+  flex: 1;
+}
+
+.add-to-cart-button::before, .back-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: all 0.6s;
+}
+
+.add-to-cart-button:hover, .back-button:hover {
+  transform: translateY(-5px);
+}
+
+.add-to-cart-button:hover::before, .back-button:hover::before {
+  left: 100%;
+}
+
+.add-to-cart-button:hover {
+  background-color: #9d4edd;
+  box-shadow: 0 10px 20px rgba(157, 78, 221, 0.4);
+}
+
+.back-button {
+  background-color: #333;
+  color: #ddd;
+}
+
+.back-button:hover {
+  background-color: #444;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.loading-overlay, .error-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+.loading-content, .error-content {
+  background-color: #232323;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 450px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(157, 78, 221, 0.3);
+  border: 1px solid #444;
+  color: #e0e0e0;
+}
+
+.error-content {
+  color: #ff6b6b;
+}
+
+.back-link {
+  margin-top: 20px;
+}
+
+.back-link a {
+  color: #9d4edd;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.back-link a:hover {
+  color: #c77dff;
+  text-shadow: 0 0 8px rgba(157, 78, 221, 0.5);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes cardGlow {
+  0%, 100% {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(157, 78, 221, 0.2);
+  }
+  50% {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 30px rgba(157, 78, 221, 0.7);
+  }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) rotate(30deg); }
+  100% { transform: translateX(100%) rotate(30deg); }
+}
+
+@media (max-width: 768px) {
+  .card-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .card-image, .card-image-placeholder {
+    margin-bottom: 10px;
+  }
+  
+  .card-actions {
+    flex-direction: column;
+  }
+}

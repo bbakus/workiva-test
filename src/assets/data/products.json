@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Black Lotus",
+    "price": 30000.00,
+    "description": "Iconic Alpha rare artifact. Adds three mana of any color to your mana pool, then is sacrificed. One of the most valuable MTG cards in existence.",
+    "imageUrl": ""
+  },
+  {
+    "id": 2,
+    "name": "Jace, the Mind Sculptor",
+    "price": 129.99,
+    "description": "Powerful planeswalker with four versatile abilities including card manipulation, bouncing creatures, and milling. Considered one of the strongest planeswalkers ever printed.",
+    "imageUrl": ""
+  },
+  {
+    "id": 3,
+    "name": "Tarmogoyf",
+    "price": 39.99,
+    "description": "Legendary Modern staple creature whose power and toughness are equal to the number of card types in all graveyards. Often a very efficient threat for its mana cost.",
+    "imageUrl": ""
+  },
+  {
+    "id": 4,
+    "name": "Force of Will",
+    "price": 119.99,
+    "description": "Classic blue counterspell that can be cast for free by exiling a blue card from your hand and paying 1 life. Essential in Legacy and Vintage formats.",
+    "imageUrl": ""
+  },
+  {
+    "id": 5,
+    "name": "Liliana of the Veil",
+    "price": 69.99,
+    "description": "Powerful black planeswalker that forces all players to discard, can remove creatures, and can separate permanents into two piles for sacrifice. Format staple in Modern.",
+    "imageUrl": ""
+  },
+  {
+    "id": 6,
+    "name": "Mox Sapphire",
+    "price": 12999.99,
+    "description": "Part of the Power Nine, this zero-cost artifact taps to add blue mana to your mana pool. Reserved List card with extreme rarity and value.",
+    "imageUrl": ""
+  },
+  {
+    "id": 7,
+    "name": "Uro, Titan of Nature's Wrath",
+    "price": 29.99,
+    "description": "Powerful Simic (Green/Blue) Elder Giant that gains life, draws cards, and ramps lands. Can escape from your graveyard for continued value.",
+    "imageUrl": ""
+  },
+  {
+    "id": 8,
+    "name": "Mishra's Workshop",
+    "price": 3499.99,
+    "description": "Legendary land that taps for three colorless mana that can only be spent on artifact spells. Reserved List card and Vintage staple.",
+    "imageUrl": ""
+  }
+] 

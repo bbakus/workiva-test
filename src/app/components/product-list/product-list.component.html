@@ -1,0 +1,29 @@
+<div class="cards-list-container">
+  <div *ngIf="loading" class="loading">
+    Loading cards...
+  </div>
+  
+  <div *ngIf="error" class="error">
+    Failed to load cards. Please try again later.
+    <div *ngIf="errorMessage" class="error-details">
+      Error details: {{ errorMessage }}
+    </div>
+  </div>
+  
+  <div *ngIf="!loading && !error && products.length === 0" class="no-products">
+    No cards available.
+  </div>
+  
+  <div *ngIf="products && products.length > 0" class="cards-grid">
+    <app-product-card 
+      *ngFor="let product of products" 
+      [product]="product"
+      (productSelected)="onProductSelected($event)">
+    </app-product-card>
+  </div>
+
+  <!-- Debug info -->
+  <pre *ngIf="!loading && !error && false" class="debug">
+    Cards count: {{ products?.length || 0 }}
+  </pre>
+</div>

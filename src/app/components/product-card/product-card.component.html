@@ -1,0 +1,14 @@
+<div class="mtg-card">
+  <div *ngIf="product.imageUrl" class="card-image">
+    <img [src]="product.imageUrl" [alt]="product.name">
+  </div>
+  <div *ngIf="!product.imageUrl" class="card-image-placeholder">
+    <div class="placeholder-text">MTG Card</div>
+  </div>
+  <div class="card-info">
+    <h3 class="card-name">{{ product.name }}</h3>
+    <p class="card-price">${{ product.price.toFixed(2) }}</p>
+    <p class="card-description">{{ product.description | slice:0:100 }}{{ product.description.length > 100 ? '...' : '' }}</p>
+    <button (click)="onSelectProduct()" class="view-button">View Card</button>
+  </div>
+</div>

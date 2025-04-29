@@ -1,59 +1,88 @@
-# WorkivaTest
+# MTG Card Collection
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.9.
+A modern Angular application that displays Magic: The Gathering cards with details and external purchase links.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- Browse a collection of rare and valuable MTG cards
+- View detailed information about each card
+- Filter functionality for price ranges
+- External links to purchase cards on Amazon
+- Responsive design for all device sizes
 
+## Screenshots
+
+*Screenshots would be added here when available*
+
+## Technology Stack
+
+- Angular 17+ (Standalone Components)
+- TypeScript
+- RxJS
+- CSS with modern animations and effects
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v16+)
+- npm or yarn
+
+### Installation
+
+1. Clone this repository:
 ```bash
-ng serve
+git clone https://github.com/yourusername/mtg-collection.git
+cd mtg-collection
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+2. Install dependencies:
 ```bash
-ng generate component component-name
+npm install
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
+3. Start the development server:
 ```bash
-ng generate --help
+npx ng serve
 ```
 
-## Building
+4. Open your browser and navigate to `http://localhost:4200`
 
-To build the project run:
+## Project Structure
 
-```bash
-ng build
-```
+- `src/app/components` - All application components
+  - `product-card` - Card display component for the main grid
+  - `product-list` - List/grid view of all available cards
+  - `product-detail` - Modal view showing detailed card information
+- `src/app/models` - TypeScript interfaces
+- `src/app/services` - Data and utility services
+- `src/assets/data` - JSON data files with card information
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Development Notes
 
-## Running unit tests
+- Card data is stored in `src/assets/data/products.json`
+- The application uses Angular's HttpClient to fetch the card data
+- Styles use a consistent dark theme with purple/magenta accents
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+## Running the Tests
 
 ```bash
-ng e2e
+npm test
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Building for Production
 
-## Additional Resources
+```bash
+npx ng build --prod
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+The build artifacts will be stored in the `dist/` directory.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- Card data and descriptions based on actual Magic: The Gathering cards
+- All Magic: The Gathering imagery and card names are property of Wizards of the Coast
